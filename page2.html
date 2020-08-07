@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>webmap</title>
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="style2.css">
+	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+			html{height: 100%}
+			body{height: 100%; margin: 0px; padding: 0px}
+			#map_canvas{height: 100%; width: 100%}
+	</style>
+
+	<script type="text/javascript" scr="http://maps.google.com/maps/api/js?sensor=true">
+	</script>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWCovltbcCEWyjbR5vvuby1IKkuNM9HIg&callback=initialize"> 
+	</script>
+	
+</head>
+
+<body>
+    <nav>
+        <label class="logo">CampusGeo</label>
+       <ul>
+        <li class="active"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>home</a></li>            
+       </ul>
+    </nav>
+	
+
+	<div id="map_canvas">
+		</div>
+		
+		<script type="text/javascript">
+			var previousPosition = null;
+			function initialize() {
+				var options = {
+					center: new google.maps.LatLng(4.035162,9.753717 ),
+   					 zoom: 12,
+   					 mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				var map = new google.maps.Map(document.getElementById("map_canvas"), options);
+
+			
+				var marker1 =  new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0831,9.7802),   
+   				    map: map,
+                    title: "IUC_Logbessou" 
+				});
+				var marker2 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0587,9.7063),
+   				    map: map,
+                    title: "IUC_Akwa"
+				});
+				var marker3 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0997,9.7715),
+   				    map: map,
+                    title: "ISICOM "
+				});
+				var marker4 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0850,9.8019),
+   				    map: map,
+                    title: "DIT"
+				});
+				var marker5 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0903,9.8019),
+   				    map: map,
+                    title: "Campus_Logbessou"
+				});
+				var marker6 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0907,9.8040),
+   				    map: map,
+                    title: "Campus_Logbessou"
+                });    
+        var marker7 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0444,9.7484),
+   				    map: map,
+                    title: "Campus A IUG"
+                });
+        var marker8 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0427,9.7530),
+   				    map: map,
+                    title: "Campus B IUG"
+                });
+        var marker9 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0418,9.7544),
+   				    map: map,
+                    title: "Campus C IUG"
+                });
+        var marker10 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0496,9.7459),
+   				    map: map,
+                    title: "ISTTAM"
+                });
+        var marker11 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0557,9.7451),
+   				    map: map,
+                    title: "Campus_Ndogbon"
+                });
+        var marker12 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0583,9.7034),
+   				    map: map,
+                    title: "La Salle"
+                });    
+        var marker13 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0818,9.7292),
+   				    map: map,
+                    title: "ISTAMA"
+                });                    
+        var marker14 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0452,9.7369),
+   				    map: map,
+                    title: "IUES-INSAM"
+                });
+        var marker15 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0032,9.8046),
+   				    map: map,
+                    title: "EFPSA"
+                });
+        var marker16 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0848,9.7343),
+   				    map: map,
+                    title: "Campus A IUGET"
+                }); 
+        var marker17 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0762,9.7336),
+   				    map: map,
+                    title: "Campus B IUGET" 
+                });   
+        var marker18 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0909,9.8029),
+   				    map: map,
+                    title: "Campus Logbessou" 
+                });   
+        var marker19 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0548,9.7347),
+   				    map: map,
+                    title: "Campus ESSEC"   
+                }); 
+        var marker20 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0569,9.7433),
+   				    map: map,
+                    title: "Campus Ndogbon"
+                });
+        var marker21 = new google.maps.Marker({
+   					position: new google.maps.LatLng(4.0737,9.7542),
+   				    map: map,
+                    title: "ISA-EMT"
+                });
+        var marker22 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0655,9.7080),
+              map: map,
+                    title: "Campus A ISTG-AC"
+                });
+        var marker23 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0128,9.7348),
+              map: map,
+                    title: "Campus B ISTG-AC"
+                });
+        var marker24 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0571,9.7098),
+              map: map,
+                    title: "PIGIER"
+                });
+        var marker25 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0571,9.7005),
+              map: map,
+                    title: "PIDERC"
+                });
+        var marker26 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0431,9.6916),
+              map: map,
+                    title: "St JEROME"
+                });
+        var marker27 = new google.maps.Marker({
+            position: new google.maps.LatLng(3.9983,9.7993),
+              map: map,
+                    title: "ISETAG"
+                });
+        var marker28 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0449,9.7538),
+              map: map,
+                    title: "ESIAC"
+                });
+        var marker29 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0921,9.6595),
+              map: map,
+                    title: "Campus A FOMIC"
+                });
+        var marker30 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0936,9.6515),
+              map: map,
+                    title: "Campus B FOMIC"
+                });
+        var marker31 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0769,9.6504),
+              map: map,
+                    title: "Campus C FOMIC"
+                });
+        var marker32 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0451,9.7266),
+              map: map,
+                    title: "Campus D FOMIC"
+                });
+        var marker33 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0908,9.7388),
+              map: map,
+                    title: "IME"
+                });
+        var marker34 = new google.maps.Marker({
+            position: new google.maps.LatLng(4.0964,9.7329),
+              map: map,
+                    title: "ISMA"
+                });
+
+                   // On crée une infobulle
+	    var infowindow1 = new google.maps.InfoWindow({         maxWidth: 300, 
+	    //On définit la position d'origine de l'infoWindow (la position du marqueur) 
+	    position: new google.maps.LatLng(4.0831,9.7802), 
+	    //On définit le texte à afficher dans l'infoWindow 
+	    content: " INSERER ICI DU CODE HTML POUR CETTE INFOBULLE "   });
+	    //On ajoute un listener d'événement : on écoute le clic sur le marqueur
+	    //google.maps.event.addListener(marker1, 'mouseover',	function() { 
+        google.maps.event.addListener(marker1, 'click', function() {
+	    // Ouverture de l'infobulle en cliquant
+	   infowindow1.open(map, marker1);  
+	        });  
+        
+         
+			}
+			if (navigator.geolocation)
+			   var watchId = navigator.geolocation.watchPosition(successCallback, null,{enableHighAccuracy:true});
+			else
+				alert("votre navigateur ne prend pas en compte la gÃ©olocalisation HTML5");
+			function successCallback(position){
+				map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+					map: map
+				});
+				if(previousPosition){
+					var newLineCoordinates =
+					[
+						new google.maps.LatLng(previousPosition.coords.latitude, previousPosition.coords.longitude),
+						new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+					];
+
+					var newLine = new  google.maps.Polyline({
+						path: newLineCoordinates,
+						strokeColor: "#FF0000",
+						strokeOpacity: 1.0,
+						strokeWeight: 2
+					});
+					newLine.setMap(map);
+				}
+				previousPosition = position;
+			}	
+		</script>
+		<script onload ="initialize()">
+		</script>
+
+
+   </body>
+</html>
